@@ -19,6 +19,11 @@ git log                     # Show my CH
 
 Updating GitHub with local changes
 ```
-git remote add origin <repo SSH address>.git
-git push -u origin main
+git remote add origin <repo SSH address> # Name RR origin
+git push -u origin main     # Back up my changes on RR
+```
+
+Branching
+```
+git checkout -b <new branchname>  # Create a new local branch
 ```

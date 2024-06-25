@@ -13,7 +13,10 @@ def test_rescale():
 
 @pytest.mark.parametrize(
     "input_array, expected_array",
-    [(np.array([1, 2, 3, 4, 5]), np.array([0, 0.25, 0.5, 0.75, 1])), (np.array([5, 4, 3, 2, 1]), np.array([1, 0.75, 0.5, 0.25, 0]))],
+    [
+        (np.array([1, 2, 3, 4, 5]), np.array([0, 0.25, 0.5, 0.75, 1])),
+        (np.array([5, 4, 3, 2, 1]), np.array([1, 0.75, 0.5, 0.25, 0])),
+    ],
 )
 def test_rescale_parameterized(input_array, expected_array):
     """Test that rescale works correctly for multiple cases."""
@@ -21,6 +24,8 @@ def test_rescale_parameterized(input_array, expected_array):
     np.testing.assert_allclose(output_array, expected_array)
 
 
+# `preloaded_data` comes from the pytest.fixture defined in `conftest.py`
+# (special name used by pytest)
 def test_rescale_with_preloaded_data(preloaded_data):
     """Demonstrate how to use fixtures in tests."""
     output_array = rescale(preloaded_data)

@@ -61,9 +61,19 @@ git push origin main    # Pushes changes from LM to RR-O
 
 ## Other useful commands
 
-### Tagging
+### Tagging and releasing
+
 Can be used to make releases
 ```
-git tag v1.1.0  # Tags the upcoming commit
-git tag -a <tagname> <hash>
+git tag v1.1.0  # Tags the current HEAD with a version
+git push origin tag v1.1.0  # Push tag to remote
+```
+Then use the GitHub interface to turn your tag into a release.
+(Click the `Tags` button next to `Branch`).
+
+### Cherry-picking
+
+Bring over specific commits from the history of another branch, without the others.
+```
+git cherry-pick <hash>
 ```

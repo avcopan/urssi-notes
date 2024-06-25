@@ -25,5 +25,7 @@ git push -u origin main     # Back up my changes on RR
 
 Branching
 ```
-git checkout -b <new branchname>  # Create a new local branch
+git checkout -b <new branchname>  # Create a local branch
+git push -u origin branching    # Back up new branch on RR
+# -u sets the RR branch to track this local branch
 ```

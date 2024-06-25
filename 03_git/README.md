@@ -1,5 +1,9 @@
 # Git
 
+General notes:
+ - `HEAD` is what you are looking at
+ - When running `git branch`, the `*` indicates that `HEAD` points to the tip of a given branch
+
 ## Local
 
 Locally, we have...
@@ -29,8 +33,8 @@ git push -u origin main     # Back up my changes on RR
 
 ## Branching
 ```
-git checkout -b <new branchname>  # Create a local branch
-git push -u origin branching    # Back up new branch on RR
+git checkout -b <new branchname>    # Create a local branch
+git push -u origin branching        # Back up new branch on RR
 # -u sets the RR branch to track this local branch
 ```
 
@@ -47,3 +51,19 @@ Now we have...
  - my fork as a Remote Repository (origin, RR-O)
  - the org repo as a Remote Repository (upstream, RR-U)
  - my local machine (LM)
+
+Commands:
+```
+git pull upstream main  # Pulls changes from RR-U to LM
+git push origin main    # Pushes changes from LM to RR-O
+# ^ these two commands sync up LM and RR-O with RR-U
+```
+
+## Other useful commands
+
+### Tagging
+Can be used to make releases
+```
+git tag v1.1.0  # Tags the upcoming commit
+git tag -a <tagname> <hash>
+```
